@@ -13,3 +13,7 @@ Right click and Open in terminal .
 Run the script : <code> ./matrosdz.sh </code>
 
 Now open your conky-manager and you will see the widgets there...
+
+<b>DEMO:</b>
+
+!['empty'](demo.png)
