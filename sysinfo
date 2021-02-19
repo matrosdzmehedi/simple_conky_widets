@@ -1,0 +1,51 @@
+
+#Text Color
+color1 grey
+#Icons Color
+color2 green
+#Graph Color
+color3 grey
+
+update_interval 1
+double_buffer yes
+no_buffers yes
+imlib_cache_size 10
+own_window true
+own_window_type normal
+own_window_hints undecorated,sticky,skip_taskbar,skip_pager,below
+own_window_colour 000000
+own_window_argb_visual yes
+own_window_argb_value 255
+own_window_transparent yes
+minimum_size 330 190
+background no
+border_inner_margin 0
+border_outer_margin 0
+alignment top_right
+gap_x 10
+gap_y 100
+use_xft yes
+xftfont Roboto Condensed:size=12
+text_buffer_size 256
+draw_shades no
+override_utf8_locale yes
+draw_graph_borders no
+default_color EEEEEE
+cpu_avg_samples 2
+
+TEXT
+${goto 20}$color2${font LineAwesomeMod :size=14}G $font$color1 Uptime ${uptime}
+${voffset 10}$color1
+${goto 20}$color2${font LineAwesomeMod :size=14}g$color1 $font CPU ${alignr 20}${cpu}%
+${alignr 20}$color3${cpugraph 30,270 -l}$color
+${goto 20}$color2${font LineAwesomeMod :size=14}C$color1 $font Disk I/O ${alignr 20}${diskio}
+${alignr 20}$color3${diskiograph 30,270 -l}$color
+${goto 20}$color2${font LineAwesomeMod :size=14}p$color1 $font Load Average(1min) ${alignr 20}${loadavg 1}
+${alignr 20}$color3${loadgraph 30,270 -l}$color
+${goto 20}$color2${font LineAwesomeMod :size=14}-$color1 $font Memory ${alignr 20}${mem} - ${memperc}%
+${alignr 20}$color3${memgraph 30,270 -l}$color1
+${goto 20}$color2${font LineAwesomeMod :size=14}T $font$color1 Upload Speed${alignr 20}${upspeed wlp2s0}
+${goto 20}$color3${upspeedgraph wlp2s0 30, 300}$color1
+${goto 20}$color2${font LineAwesomeMod :size=14}8 $font$color1 Download Speed${alignr 20}${downspeed wlp2s0}
+${goto 20}$color3${downspeedgraph wlp2s0 30, 300 -l}$color1
+
