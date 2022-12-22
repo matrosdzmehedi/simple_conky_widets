@@ -48,4 +48,5 @@ ${goto 20}$color2${font LineAwesomeMod :size=14}T $font$color1 Upload Speed${ali
 ${goto 20}$color3${upspeedgraph wlp2s0 30, 300}$color1
 ${goto 20}$color2${font LineAwesomeMod :size=14}8 $font$color1 Download Speed${alignr 20}${downspeed wlp2s0}
 ${goto 20}$color3${downspeedgraph wlp2s0 30, 300 -l}$color1
-
+${goto 20}${color2}Home${color0}${alignr 20}${execi 3600 hostname -I | awk '{print $1}'}
+${goto 20}${color2}Public${color0}${alignr 20}${execi 3600 wget -q -O /dev/stdout http://checkip.dyndns.org/ | cut -d : -f 2- | cut -d \< -f -1}
