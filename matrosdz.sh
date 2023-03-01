@@ -1,6 +1,7 @@
 #! /bin/bash
 
 DIR="$HOME/.fonts/"
+
 if [ -d "$DIR" ]; then
    echo "'$DIR' found "
 else
@@ -15,6 +16,15 @@ mkdir matrosdz;
 wifi=$(ip r | grep default | awk '{print $5}')
 sed -i "s/wlp2s0/$wifi/"  sysinfo
 
-mv clock dayname sysinfo date LICENSE README.md ./matrosdz ;
+mv clock dayname sysinfo date LICENSE README.md matrosdz/ ;
 
-mv matrosdz/ $HOME/.conky/
+
+DIR_CONKY="$HOME/.conky/"
+
+if [ -d "$DIR_CONKY" ]; then
+   echo "'$DIR_CONKY' found "
+else
+   mkdir -vp $HOME/.conky/ 
+fi
+
+mv matrosdz/ $HOME/.conky/ ;
